@@ -36,7 +36,7 @@ function renderToCanvas(x, y, active) {
 
 // Create the animation loop
 function loopFn(hasChanged, next) {
-    // Check if the came has changed before continuing
+    // Check if the game has changed before continuing
     if (hasChanged) {
         window.requestAnimationFrame(next);
     }
