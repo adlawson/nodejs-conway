@@ -1,0 +1,11 @@
+{
+    "name": "conway",
+    "version": "1.0.0",
+    "description": "Rendering agnostic implementation of Conway's Game of Life",
+    "private": true,
+    "main": "index.js",
+    "devDependencies": {
+        "chai": "~1.9",
+        "mocha": "~1.21"
+    }
+}
