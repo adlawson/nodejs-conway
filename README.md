@@ -70,9 +70,10 @@ fact that the only cells that can become "alive" next frame **must** be
 a neighbour of at least 2 active cells. The padding also covers cells that were
 just "alive", so we can kill them off when we render.
 
-**Enough waffle!** Here's a demonstration of what I'm on about. The black cells
-are alive, and the red cells are "padding". No other cells are represented or
-worked on (whitespace is just whitespace; workspace is "infinitely" large).
+**Enough waffle!** Here's a demonstration of what I'm on about. The **black**
+cells are alive, the **red** cells are cells that have just died (allowing us
+to clear the cell), and the **blue** cells are padding. The whitespace is just
+whitespace and will stretch to an infinitely large workspace.
 
 ![Published version][img-padding]
 

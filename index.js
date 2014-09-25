@@ -95,9 +95,12 @@ function life(render, loop, initialGame) {
         var newGame = {};
         enumerateObj(game, function nextGameEnumerator(cell, id) {
             var count = countActiveNeighbours(game, cell);
-            if (!(0 === count && !isActive(cell))) {
-                var active = (isActive(cell) === true && count === 2) || count === 3;
-                newGame[id] = createCell(getX(cell), getY(cell), active);
+            var wasActive = isActive(cell);
+            if (!(0 === count && !wasActive)) {
+                var active = (wasActive === true && count === 2) || count === 3;
+                if (active || wasActive) {
+                    newGame[id] = createCell(getX(cell), getY(cell), active);
+                }
             }
         });
         return padGame(newGame);
