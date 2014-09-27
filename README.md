@@ -26,7 +26,6 @@ var life = require('conway');
 // Setup the rendering function
 function renderToCanvas(x, y, active) {
     if (active) {
-        ctx.beginPath();
         ctx.fillStyle = '#000';
         ctx.fillRect(x, y, 5, 5);
     } else {
