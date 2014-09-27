@@ -32,9 +32,9 @@ function life(render, loop, initialGame) {
         return total;
     }
 
-    // createCell :: Integer, Integer, Boolean -> Cell
-    function createCell(x, y, active) {
-        return [x, y, active || false];
+    // createCell :: Integer, Integer, Boolean, Boolean -> Cell
+    function createCell(x, y, active, padding) {
+        return [x, y, active || false, !!padding];
     }
 
     // defaultLoopCallback :: Boolean, Function -> Undefined
@@ -81,6 +81,11 @@ function life(render, loop, initialGame) {
         return cell[2];
     }
 
+    // isPadding :: Cell -> Boolean
+    function isPadding(cell) {
+        return cell[3];
+    }
+
     // isObjDifferent :: Object, Object -> Boolean
     function isObjDifferent(objA, objB) {
         return JSON.stringify(objA) !== JSON.stringify(objB);
@@ -115,14 +120,14 @@ function life(render, loop, initialGame) {
         var y = getY(cell);
 
         return [
-            createCell((x - 1), (y - 1)),
-            createCell((x    ), (y - 1)),
-            createCell((x + 1), (y - 1)),
-            createCell((x - 1), (y    )),
-            createCell((x + 1), (y    )),
-            createCell((x - 1), (y + 1)),
-            createCell((x    ), (y + 1)),
-            createCell((x + 1), (y + 1))
+            createCell((x - 1), (y - 1), false, true),
+            createCell((x    ), (y - 1), false, true),
+            createCell((x + 1), (y - 1), false, true),
+            createCell((x - 1), (y    ), false, true),
+            createCell((x + 1), (y    ), false, true),
+            createCell((x - 1), (y + 1), false, true),
+            createCell((x    ), (y + 1), false, true),
+            createCell((x + 1), (y + 1), false, true)
         ];
     }
 
@@ -177,7 +182,7 @@ function life(render, loop, initialGame) {
     function renderGame(game) {
         var renderedGame = {};
         enumerateObj(game, function renderGameEnumerator(cell, id) {
-            if(false !== renderFn(getX(cell), getY(cell), isActive(cell))) {
+            if(false !== renderFn(getX(cell), getY(cell), isActive(cell), isPadding(cell))) {
                 renderedGame[id] = cell;
             }
         });
