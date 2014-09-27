@@ -66,14 +66,17 @@ function life(render, loop, initialGame) {
         return game;
     }
 
+    // getX :: Cell -> Integer
     function getX(cell) {
         return cell[0];
     }
 
+    // getY :: Cell -> Integer
     function getY(cell) {
         return cell[1];
     }
 
+    // isActive :: Cell -> Boolean
     function isActive(cell) {
         return cell[2];
     }
