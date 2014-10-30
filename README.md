@@ -15,7 +15,7 @@ place is [already littered with GoL implementations][npm-life] and ain't nobody
 got time for another one. That said, you can still use this library as a
 dependency by referencing this repository directly.
 
-#### `npm install git://github.com/adlawson/conway.js.git#TAG`
+#### `npm install git://github.com/adlawson/js-conway.git#TAG`
 
 ## Documentation
 The usage example below shows how to use this library to render a GoL with the
@@ -96,7 +96,7 @@ The content of this library is released under the **MIT License** by
 <!-- Links -->
 [travis]: https://travis-ci.org/adlawson/urine.js
 [ico-license]: http://img.shields.io/badge/license-MIT-e05d44.svg?style=flat
-[ico-package]: http://img.shields.io/github/tag/adlawson/conway.js.svg?style=flat
+[ico-package]: http://img.shields.io/github/tag/adlawson/js-conway.svg?style=flat
 [ico-build]: http://img.shields.io/travis/adlawson/urine.js/master.svg?style=flat
 [license]: LICENSE
 [img-padding]: padding.gif
